@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d23unkea4ch1"]
+
+[ext_resource type="Script" uid="uid://cw2dyphotlb2s" path="res://Modes/Arcade/Map Maker/Orb/Scripts/Orb Movement.gd" id="1_gfd8l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xqw3"]
+radius = 0.591946
+
+[sub_resource type="SphereMesh" id="SphereMesh_uk8kg"]
+
+[node name="MM_Orb" type="Node2D" unique_id=769054012]
+script = ExtResource("1_gfd8l")
+
+[node name="Hitbox" type="CharacterBody2D" parent="." unique_id=427928434 groups=["orb"]]
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Hitbox" unique_id=1325483742]
+scale = Vector2(13.5147, 13.5147)
+shape = SubResource("CircleShape2D_5xqw3")
+
+[node name="Graphic" type="MeshInstance2D" parent="Hitbox" unique_id=1319779678]
+scale = Vector2(15, 15)
+mesh = SubResource("SphereMesh_uk8kg")

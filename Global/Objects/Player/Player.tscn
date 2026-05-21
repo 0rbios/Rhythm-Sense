@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c7pahg8q3dv4l"]
+
+[ext_resource type="Script" uid="uid://bkyubp3jjxr7v" path="res://Global/Objects/Player/Scripts/Orb Miss.gd" id="1_4dohe"]
+[ext_resource type="PackedScene" uid="uid://d2astr3heckws" path="res://Global/Objects/Player Square/Player Square.tscn" id="1_72ieh"]
+[ext_resource type="Script" uid="uid://6vsfjhet42f6" path="res://Global/Objects/Player/Scripts/Accuracy Display.gd" id="3_r66lb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4dohe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_72ieh"]
+radius = 0.441073
+
+[node name="Player" type="Node2D" unique_id=1084173632]
+
+[node name="Track Outer" type="MeshInstance2D" parent="." unique_id=1798757377]
+scale = Vector2(372.547, 372.547)
+mesh = SubResource("SphereMesh_4dohe")
+
+[node name="Track Inner" type="MeshInstance2D" parent="Track Outer" unique_id=1237600535]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+scale = Vector2(0.973708, 0.973708)
+mesh = SubResource("SphereMesh_4dohe")
+
+[node name="Missed Orb Hitbox" type="Area2D" parent="Track Outer/Track Inner" unique_id=783028465]
+script = ExtResource("1_4dohe")
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Track Outer/Track Inner/Missed Orb Hitbox" unique_id=490707434]
+shape = SubResource("CircleShape2D_72ieh")
+
+[node name="player_square" parent="." unique_id=934527004 instance=ExtResource("1_72ieh")]
+
+[node name="Accuracy" type="Label" parent="." unique_id=530557118]
+offset_left = -38.0
+offset_top = -21.0
+offset_right = 39.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_r66lb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=511184560]
+
+[connection signal="body_entered" from="Track Outer/Track Inner/Missed Orb Hitbox" to="Track Outer/Track Inner/Missed Orb Hitbox" method="_on_collision"]

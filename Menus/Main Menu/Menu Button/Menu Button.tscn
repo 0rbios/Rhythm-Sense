@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cs3bfoxe1cbwp"]
+
+[ext_resource type="Script" uid="uid://c24od1s6c4aex" path="res://Menus/Main Menu/Menu Button/Scripts/Menu Button.gd" id="1_wfgx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfgx3"]
+size = Vector2(213, 22)
+
+[node name="Menu Button" type="Control" unique_id=606901585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wfgx3")
+
+[node name="Button Text" type="Label" parent="." unique_id=790923533]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1419183228]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2004518086]
+position = Vector2(106.5, 11)
+shape = SubResource("RectangleShape2D_wfgx3")
+
+[connection signal="area_entered" from="Area2D" to="." method="_touchedSomething"]
+[connection signal="area_exited" from="Area2D" to="." method="_noSelection"]

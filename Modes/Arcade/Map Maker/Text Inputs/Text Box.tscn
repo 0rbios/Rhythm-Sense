@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bkxc53xwk454c"]
+
+[ext_resource type="Script" uid="uid://03fe2pbnn06a" path="res://Modes/Arcade/Map Maker/Text Inputs/Scripts/Text Input Handler.gd" id="1_n5icw"]
+
+[node name="Text Box" type="ColorRect" unique_id=846841346 node_paths=PackedStringArray("inputDisplay")]
+offset_right = 249.0
+offset_bottom = 32.0
+focus_mode = 2
+color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+script = ExtResource("1_n5icw")
+inputDisplay = NodePath("User Input")
+
+[node name="User Input" type="Label" parent="." unique_id=381748504]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 245.0
+offset_bottom = 28.0
+vertical_alignment = 1
+clip_text = true
+
+[connection signal="focus_entered" from="." to="." method="focusEntered"]
+[connection signal="focus_exited" from="." to="." method="focusExited"]

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dbfsuitgagl7h"]
+
+[ext_resource type="Script" uid="uid://dkx8pwg5ctyup" path="res://Modes/Arcade/Practice Mode/Practice UI/Scripts/Exit Practice.gd" id="1_5s1jx"]
+[ext_resource type="PackedScene" uid="uid://d3giewil23og2" path="res://Menus/Main Menu/Main Menu.tscn" id="2_ixiug"]
+[ext_resource type="Script" uid="uid://r0d663gxlj5u" path="res://Global/Scripts/Score.gd" id="3_bxl01"]
+
+[node name="Practice UI" type="CanvasLayer" unique_id=593714468]
+
+[node name="Exit Text" type="Label" parent="." unique_id=1446880324]
+offset_left = 26.0
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 39.0
+text = "<Back Button> to exit"
+script = ExtResource("1_5s1jx")
+mainMenu = ExtResource("2_ixiug")
+
+[node name="Multiplier" type="Label" parent="." unique_id=1588508358]
+offset_left = 22.0
+offset_top = 565.0
+offset_right = 62.0
+offset_bottom = 588.0
+text = "1x"
+script = ExtResource("3_bxl01")
+
+[node name="Score" type="Label" parent="." unique_id=256551509]
+offset_left = 48.0
+offset_top = 585.0
+offset_right = 88.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 39
+text = "0"

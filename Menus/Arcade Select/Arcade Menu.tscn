@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://4irty0w86h6b"]
+
+[ext_resource type="PackedScene" uid="uid://c7pahg8q3dv4l" path="res://Global/Objects/Player/Player.tscn" id="1_agwh6"]
+[ext_resource type="Script" uid="uid://ykky2gkdy74s" path="res://Menus/Main Menu/Scripts/Menu Select.gd" id="1_xmeu4"]
+[ext_resource type="Script" uid="uid://cbeg2r2g5uugg" path="res://Global/Scripts/Button Parenter.gd" id="2_xmeu4"]
+[ext_resource type="PackedScene" uid="uid://cs3bfoxe1cbwp" path="res://Menus/Main Menu/Menu Button/Menu Button.tscn" id="3_m755p"]
+[ext_resource type="Script" uid="uid://ctfvmnkanf5td" path="res://Menus/Arcade Select/Scripts/Button Executables/select.gd" id="4_m62wp"]
+[ext_resource type="Script" uid="uid://gktxvfdkwkjf" path="res://Menus/Arcade Select/Scripts/Button Executables/maker.gd" id="5_hunqi"]
+[ext_resource type="Script" uid="uid://csxbsgxybp854" path="res://Menus/Arcade Select/Scripts/Button Executables/practice.gd" id="6_uqfgj"]
+[ext_resource type="Script" uid="uid://l7n0o21xbovd" path="res://Menus/Arcade Select/Scripts/Button Executables/back.gd" id="7_ii1ny"]
+
+[node name="Arcade Select" type="Node2D" unique_id=1944307966]
+script = ExtResource("1_xmeu4")
+
+[node name="Buttons" type="Control" parent="." unique_id=318023889]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_xmeu4")
+
+[node name="Select Map" parent="Buttons" unique_id=606901585 instance=ExtResource("3_m755p")]
+layout_mode = 1
+offset_left = -328.0
+offset_top = -160.0
+offset_right = -328.0
+offset_bottom = -160.0
+buttonText = "Select Map"
+executeScript = ExtResource("4_m62wp")
+
+[node name="Map Maker" parent="Buttons" unique_id=323402368 instance=ExtResource("3_m755p")]
+layout_mode = 1
+offset_left = -386.0
+offset_top = -74.0
+offset_right = -386.0
+offset_bottom = -74.0
+buttonText = "Map Maker"
+executeScript = ExtResource("5_hunqi")
+
+[node name="Practice" parent="Buttons" unique_id=1960091403 instance=ExtResource("3_m755p")]
+layout_mode = 1
+offset_left = -391.0
+offset_top = 33.0
+offset_right = -391.0
+offset_bottom = 33.0
+buttonText = "Practice"
+executeScript = ExtResource("6_uqfgj")
+
+[node name="Back" parent="Buttons" unique_id=1657907097 instance=ExtResource("3_m755p")]
+layout_mode = 1
+offset_left = -349.0
+offset_top = 120.0
+offset_right = -349.0
+offset_bottom = 120.0
+buttonText = "Back to Menu"
+executeScript = ExtResource("7_ii1ny")
+
+[node name="Player" parent="." unique_id=1084173632 instance=ExtResource("1_agwh6")]

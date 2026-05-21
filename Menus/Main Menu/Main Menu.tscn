@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d3giewil23og2"]
+
+[ext_resource type="Script" uid="uid://ykky2gkdy74s" path="res://Menus/Main Menu/Scripts/Menu Select.gd" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://cbeg2r2g5uugg" path="res://Global/Scripts/Button Parenter.gd" id="2_ds64n"]
+[ext_resource type="PackedScene" uid="uid://cs3bfoxe1cbwp" path="res://Menus/Main Menu/Menu Button/Menu Button.tscn" id="2_u37r0"]
+[ext_resource type="Script" uid="uid://38ql7unyx1l4" path="res://Menus/Main Menu/Menu Button/Scripts/Button Executables/story.gd" id="4_gdw1a"]
+[ext_resource type="PackedScene" uid="uid://c7pahg8q3dv4l" path="res://Global/Objects/Player/Player.tscn" id="4_u516p"]
+[ext_resource type="Script" uid="uid://dpnmpwxxupokq" path="res://Menus/Main Menu/Menu Button/Scripts/Button Executables/arcade.gd" id="5_rh2gb"]
+[ext_resource type="Script" uid="uid://cay5hdh060hfw" path="res://Menus/Main Menu/Menu Button/Scripts/Button Executables/settings.gd" id="6_o4nkk"]
+[ext_resource type="Script" uid="uid://ctxgp61lscenw" path="res://Menus/Main Menu/Menu Button/Scripts/Button Executables/exit.gd" id="7_rh2gb"]
+
+[node name="Main Menu" type="Node2D" unique_id=588672420]
+script = ExtResource("1_ekxnf")
+
+[node name="Buttons" type="Control" parent="." unique_id=249287294 node_paths=PackedStringArray("menuParent")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ds64n")
+menuParent = NodePath("..")
+
+[node name="Story" parent="Buttons" unique_id=606901585 instance=ExtResource("2_u37r0")]
+layout_mode = 1
+offset_left = 104.0
+offset_top = -188.0
+offset_right = 104.0
+offset_bottom = -188.0
+buttonText = "Story"
+executeScript = ExtResource("4_gdw1a")
+
+[node name="Arcade" parent="Buttons" unique_id=1820056439 instance=ExtResource("2_u37r0")]
+layout_mode = 1
+offset_left = 165.0
+offset_top = -116.0
+offset_right = 165.0
+offset_bottom = -116.0
+buttonText = "Arcade"
+executeScript = ExtResource("5_rh2gb")
+
+[node name="Settings" parent="Buttons" unique_id=851113488 instance=ExtResource("2_u37r0")]
+layout_mode = 1
+offset_left = 163.0
+offset_top = 77.0
+offset_right = 163.0
+offset_bottom = 77.0
+buttonText = "Settings"
+executeScript = ExtResource("6_o4nkk")
+
+[node name="Exit" parent="Buttons" unique_id=182519881 instance=ExtResource("2_u37r0")]
+layout_mode = 1
+offset_left = 125.0
+offset_top = 136.0
+offset_right = 125.0
+offset_bottom = 136.0
+buttonText = "Exit"
+executeScript = ExtResource("7_rh2gb")
+
+[node name="Player" parent="." unique_id=1084173632 instance=ExtResource("4_u516p")]

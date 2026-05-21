@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c4adhl481f02r"]
+
+[ext_resource type="Script" uid="uid://cac8jn7wyafi1" path="res://Global/Objects/Orb/Scripts/Orb Movement.gd" id="1_w88w3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w88w3"]
+radius = 0.591946
+
+[sub_resource type="SphereMesh" id="SphereMesh_68se5"]
+
+[node name="Orb" type="Node2D" unique_id=1596652335]
+script = ExtResource("1_w88w3")
+
+[node name="Hitbox" type="CharacterBody2D" parent="." unique_id=1407300235 groups=["orb"]]
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Hitbox" unique_id=396900931]
+scale = Vector2(13.5147, 13.5147)
+shape = SubResource("CircleShape2D_w88w3")
+
+[node name="Graphic" type="MeshInstance2D" parent="Hitbox" unique_id=475583190]
+scale = Vector2(15, 15)
+mesh = SubResource("SphereMesh_68se5")

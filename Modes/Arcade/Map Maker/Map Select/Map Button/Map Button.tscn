@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bf6s2dv2gw0ml"]
+
+[ext_resource type="Script" uid="uid://djg6ejkwbgoh" path="res://Modes/Arcade/Map Maker/Map Select/Map Button/Scripts/Map Button.gd" id="1_120j7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt4mj"]
+size = Vector2(1137, 146)
+
+[node name="Map Button" type="Control" unique_id=404816226]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=503255133]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 1143.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 45
+text = "Test"
+script = ExtResource("1_120j7")
+
+[node name="Hitbox" type="Area2D" parent="Button" unique_id=262680576]
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Button/Hitbox" unique_id=807684796]
+position = Vector2(568, 73)
+shape = SubResource("RectangleShape2D_kt4mj")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="area_entered" from="Button/Hitbox" to="Button" method="_cursor_over"]
+[connection signal="area_exited" from="Button/Hitbox" to="Button" method="_cursor_off"]

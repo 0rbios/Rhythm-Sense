@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://j4xdlpj4heif"]
+
+[ext_resource type="Script" uid="uid://dspxarwqjxmiq" path="res://Menus/Settings/Control Button/Scripts/Control Button.gd" id="1_6trsn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1hfu"]
+size = Vector2(113, 113)
+
+[node name="Control Button" type="Control" unique_id=749124606]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6trsn")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1041656906]
+scale = Vector2(0.11035154, 0.11035154)
+
+[node name="Button" type="Button" parent="." unique_id=241881876]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = 57.0
+offset_bottom = 57.0
+flat = true
+
+[node name="Hover Box" type="Area2D" parent="." unique_id=1192899747]
+
+[node name="Hover Shape" type="CollisionShape2D" parent="Hover Box" unique_id=812877976]
+shape = SubResource("RectangleShape2D_u1hfu")
+
+[connection signal="pressed" from="Button" to="." method="_clickToSet"]
+[connection signal="area_entered" from="Hover Box" to="." method="_hoveredOver"]
+[connection signal="area_exited" from="Hover Box" to="." method="_hoverLeave"]

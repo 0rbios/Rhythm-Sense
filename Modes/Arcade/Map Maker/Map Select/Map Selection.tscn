@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cw62okj6tmsao"]
+
+[ext_resource type="Script" uid="uid://d083b1y75tspf" path="res://Modes/Arcade/Map Maker/Map Select/Scripts/Read Map Folder.gd" id="1_my4iu"]
+[ext_resource type="Script" uid="uid://mw152qweb2w3" path="res://Modes/Arcade/Map Maker/Scripts/Back To Maker.gd" id="2_my4iu"]
+[ext_resource type="PackedScene" uid="uid://b0vw04a3phw8s" path="res://Global/Objects/Cursor/Cursor.tscn" id="3_5wsoc"]
+
+[node name="Menu" type="Control" unique_id=2084466692]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Map Select Group" type="CanvasLayer" parent="." unique_id=2087237524]
+
+[node name="Map Select Text" type="Label" parent="Map Select Group" unique_id=2064679728]
+offset_top = 13.0
+offset_right = 1152.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 41
+text = "Select a Map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll Box" type="ScrollContainer" parent="Map Select Group" unique_id=837825652]
+offset_top = 116.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Vertical Aligner" type="VBoxContainer" parent="Map Select Group/Scroll Box" unique_id=310578705]
+layout_mode = 2
+theme_override_constants/separation = 150
+script = ExtResource("1_my4iu")
+
+[node name="Back" type="Button" parent="Map Select Group" unique_id=1447009306]
+offset_left = 71.0
+offset_top = 42.0
+offset_right = 133.0
+offset_bottom = 76.0
+text = "Back"
+script = ExtResource("2_my4iu")
+
+[node name="Cursor" parent="Map Select Group" unique_id=1103410415 instance=ExtResource("3_5wsoc")]
+
+[connection signal="pressed" from="Map Select Group/Back" to="Map Select Group/Back" method="_on_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cb4vh6h8yu5qv"]
+
+[ext_resource type="Script" uid="uid://cweon20f5p2ur" path="res://Modes/Arcade/Practice Mode/Scripts/Practice Loader.gd" id="1_fuoyr"]
+[ext_resource type="PackedScene" uid="uid://c7pahg8q3dv4l" path="res://Global/Objects/Player/Player.tscn" id="2_bvv0s"]
+[ext_resource type="Script" uid="uid://dmal7l8xxf4ns" path="res://Modes/Arcade/Practice Mode/Scripts/BPM Timer.gd" id="3_fuoyr"]
+[ext_resource type="Script" uid="uid://c4q6pqgmhshj5" path="res://Modes/Arcade/Practice Mode/Scripts/Orb Creator.gd" id="4_r85td"]
+[ext_resource type="PackedScene" uid="uid://c4adhl481f02r" path="res://Global/Objects/Orb/Orb.tscn" id="5_owkfv"]
+[ext_resource type="PackedScene" uid="uid://dbfsuitgagl7h" path="res://Modes/Arcade/Practice Mode/Practice UI/Practice UI.tscn" id="6_7eonn"]
+
+[node name="Practice Mode" type="Node2D" unique_id=173859539]
+script = ExtResource("1_fuoyr")
+
+[node name="Player" parent="." unique_id=856410184 instance=ExtResource("2_bvv0s")]
+scale = Vector2(0.55, 0.55)
+
+[node name="Spawn BPM Timer" type="Timer" parent="." unique_id=1825670457]
+autostart = true
+script = ExtResource("3_fuoyr")
+
+[node name="Center" type="Marker2D" parent="." unique_id=754911999]
+
+[node name="Orb Creator" type="Node2D" parent="Center" unique_id=823449992 node_paths=PackedStringArray("orbParent")]
+position = Vector2(324, 0)
+script = ExtResource("4_r85td")
+orb = ExtResource("5_owkfv")
+orbParent = NodePath("../../Orbs")
+
+[node name="Orbs" type="Node2D" parent="." unique_id=939070539]
+
+[node name="Practice UI" parent="." unique_id=593714468 instance=ExtResource("6_7eonn")]
+
+[connection signal="timeout" from="Spawn BPM Timer" to="Spawn BPM Timer" method="_on_timeout"]
+[connection signal="timeout" from="Spawn BPM Timer" to="Center/Orb Creator" method="_create_timer_out"]

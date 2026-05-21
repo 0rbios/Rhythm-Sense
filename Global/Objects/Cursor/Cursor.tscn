@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b0vw04a3phw8s"]
+
+[ext_resource type="Script" uid="uid://kr30s7cf5d8j" path="res://Global/Objects/Cursor/Scripts/Cursor.gd" id="1_xq7o7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_waijc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xq7o7"]
+radius = 0.5
+
+[node name="Cursor" type="MeshInstance2D" unique_id=1103410415]
+modulate = Color(0, 0, 0, 0.5019608)
+self_modulate = Color(0, 0, 0, 0.5019608)
+scale = Vector2(60, 60)
+mesh = SubResource("SphereMesh_waijc")
+script = ExtResource("1_xq7o7")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1367110939 groups=["cursor"]]
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Hitbox" unique_id=217666383]
+shape = SubResource("CircleShape2D_xq7o7")

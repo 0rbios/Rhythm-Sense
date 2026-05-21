@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bhe16idyex7hr"]
+
+[ext_resource type="Texture2D" uid="uid://qfl41xj0ygfc" path="res://Modes/Arcade/Map Maker/Marker/Assets/Add Marker.png" id="1_ayqo2"]
+[ext_resource type="Script" uid="uid://cfq0wwaxvmu3x" path="res://Modes/Arcade/Map Maker/Marker/Scripts/Marker.gd" id="1_ptgqk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oika3"]
+radius = 130.13838
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oika3"]
+size = Vector2(835, 691)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouy4b"]
+size = Vector2(705.5, 690)
+
+[node name="Map Maker Marker" type="Sprite2D" unique_id=199079033]
+texture = ExtResource("1_ayqo2")
+script = ExtResource("1_ptgqk")
+
+[node name="Clickbox" type="Button" parent="." unique_id=2079968543]
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+flat = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2015953676]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=149195665]
+shape = SubResource("CircleShape2D_oika3")
+
+[node name="Delete Background" type="ColorRect" parent="." unique_id=215827400]
+visible = false
+offset_left = -3175.0
+offset_top = -1967.0
+offset_right = 3183.0
+offset_bottom = -202.0
+color = Color(0.176471, 0.176471, 0.176471, 0.501961)
+
+[node name="Message" type="Label" parent="Delete Background" unique_id=596061798]
+layout_mode = 0
+offset_left = 1194.0
+offset_top = 96.0
+offset_right = 5151.0
+offset_bottom = 778.0
+theme_override_font_sizes/font_size = 500
+text = "Delete This Orb?"
+
+[node name="Yes" type="Button" parent="Delete Background" unique_id=404762905]
+layout_mode = 0
+offset_left = 1894.0
+offset_top = 786.0
+offset_right = 2729.0
+offset_bottom = 1476.0
+theme_override_font_sizes/font_size = 500
+text = "Yes"
+
+[node name="Hitbox" type="Area2D" parent="Delete Background/Yes" unique_id=1644778660]
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Delete Background/Yes/Hitbox" unique_id=2141336198]
+position = Vector2(417.5, 345.5)
+shape = SubResource("RectangleShape2D_oika3")
+
+[node name="No" type="Button" parent="Delete Background" unique_id=1800509993]
+layout_mode = 0
+offset_left = 3745.0
+offset_top = 805.0
+offset_right = 4450.0
+offset_bottom = 1495.0
+theme_override_font_sizes/font_size = 500
+text = "No"
+
+[node name="Hitbox" type="Area2D" parent="Delete Background/No" unique_id=71134416]
+
+[node name="Hitbox Shape" type="CollisionShape2D" parent="Delete Background/No/Hitbox" unique_id=1301046762]
+position = Vector2(352.25, 345)
+shape = SubResource("RectangleShape2D_ouy4b")
+
+[connection signal="pressed" from="Clickbox" to="." method="_on_clickbox_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="_cursor_over"]
+[connection signal="area_exited" from="Area2D" to="." method="_cursor_off"]
+[connection signal="pressed" from="Delete Background/Yes" to="." method="_on_yes_pressed"]
+[connection signal="area_entered" from="Delete Background/Yes/Hitbox" to="." method="_yes_cursor_over"]
+[connection signal="area_exited" from="Delete Background/Yes/Hitbox" to="." method="_yes_cursor_off"]
+[connection signal="pressed" from="Delete Background/No" to="." method="_on_no_pressed"]
+[connection signal="area_entered" from="Delete Background/No/Hitbox" to="." method="_no_cursor_over"]
+[connection signal="area_exited" from="Delete Background/No/Hitbox" to="." method="_no_cursor_off"]
