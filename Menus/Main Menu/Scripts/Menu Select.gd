@@ -9,8 +9,7 @@ var selectedOption : Node
 @export var buttons : Array[Node]
 
 # File Path
-var userPath : String = OS.get_data_dir()
-var mapsPath : String = userPath + "/SpinR/"
+var gameDataPath : String = OS.get_data_dir() + "/Rhythm Sense/"
 
 # Functions ----------------------------------------------------------------------------------------
 
@@ -19,7 +18,7 @@ func _ready() -> void:
 	global.inputType = loadedSettings.inputMethod
 	global.useCursor = loadedSettings.useCursor
 	
-	DirAccess.make_dir_recursive_absolute(mapsPath)
+	DirAccess.make_dir_recursive_absolute(gameDataPath)
 	
 	if Input.get_connected_joypads().size() == 0:
 		global.inputType = "mouse"

@@ -7,7 +7,7 @@ var startOn = 3
 
 # Functions ----------------------------------------------------------------------------------------
 
-func _on_timeout():
+func _on_timeout() -> void:
 	if global.beat == startOn:
 		$"../Music Player".play()
 	

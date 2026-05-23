@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkx8pwg5ctyup" path="res://Modes/Arcade/Practice Mode/Practice UI/Scripts/Exit Practice.gd" id="1_5s1jx"]
 [ext_resource type="PackedScene" uid="uid://d3giewil23og2" path="res://Menus/Main Menu/Main Menu.tscn" id="2_ixiug"]
-[ext_resource type="Script" uid="uid://r0d663gxlj5u" path="res://Global/Scripts/Score.gd" id="3_bxl01"]
+[ext_resource type="Script" uid="uid://r0d663gxlj5u" path="res://Modes/Scripts/Score.gd" id="3_bxl01"]
 
 [node name="Practice UI" type="CanvasLayer" unique_id=593714468]
 

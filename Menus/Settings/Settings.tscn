@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csyp81y3u8k5f"]
 
 [ext_resource type="Script" uid="uid://cujwhp8ihtx0i" path="res://Menus/Settings/Scripts/Settings Select.gd" id="1_5p8wc"]
-[ext_resource type="Script" uid="uid://dygaq2ymouo5e" path="res://Global/Scripts/Back Button Only.gd" id="2_r6d6q"]
+[ext_resource type="PackedScene" uid="uid://couf7pysqghal" path="res://Global/Objects/Back Button/Back Button.tscn" id="1_rrefv"]
 [ext_resource type="PackedScene" uid="uid://b0vw04a3phw8s" path="res://Global/Objects/Cursor/Cursor.tscn" id="3_u1hfu"]
 
 [node name="Settings" type="Control" unique_id=994638330]
@@ -14,14 +14,7 @@ grow_vertical = 2
 
 [node name="Settings Buttons" type="CanvasLayer" parent="." unique_id=2074160681]
 
-[node name="Back" type="Button" parent="Settings Buttons" unique_id=810790809]
-offset_left = 69.0
-offset_top = 28.0
-offset_right = 164.0
-offset_bottom = 86.0
-theme_override_font_sizes/font_size = 36
-text = "<"
-script = ExtResource("2_r6d6q")
+[node name="Back" parent="Settings Buttons" unique_id=141687598 instance=ExtResource("1_rrefv")]
 
 [node name="Title" type="Label" parent="Settings Buttons" unique_id=2004898228]
 offset_left = 120.0
@@ -41,5 +34,3 @@ script = ExtResource("1_5p8wc")
 
 [node name="Cursor" parent="Settings Buttons" unique_id=1103410415 instance=ExtResource("3_u1hfu")]
 top_level = true
-
-[connection signal="pressed" from="Settings Buttons/Back" to="Settings Buttons/Back" method="_on_pressed_set"]

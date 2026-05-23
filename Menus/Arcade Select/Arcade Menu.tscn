@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7pahg8q3dv4l" path="res://Global/Objects/Player/Player.tscn" id="1_agwh6"]
 [ext_resource type="Script" uid="uid://ykky2gkdy74s" path="res://Menus/Main Menu/Scripts/Menu Select.gd" id="1_xmeu4"]
-[ext_resource type="Script" uid="uid://cbeg2r2g5uugg" path="res://Global/Scripts/Button Parenter.gd" id="2_xmeu4"]
+[ext_resource type="Script" uid="uid://cbeg2r2g5uugg" path="res://Menus/Scripts/Button Parenter.gd" id="2_xmeu4"]
 [ext_resource type="PackedScene" uid="uid://cs3bfoxe1cbwp" path="res://Menus/Main Menu/Menu Button/Menu Button.tscn" id="3_m755p"]
 [ext_resource type="Script" uid="uid://ctfvmnkanf5td" path="res://Menus/Arcade Select/Scripts/Button Executables/select.gd" id="4_m62wp"]
 [ext_resource type="Script" uid="uid://gktxvfdkwkjf" path="res://Menus/Arcade Select/Scripts/Button Executables/maker.gd" id="5_hunqi"]

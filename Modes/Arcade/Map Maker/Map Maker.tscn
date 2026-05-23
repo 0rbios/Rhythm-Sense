@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dfn3ee4uumidv" path="res://Modes/Arcade/Map Maker/Scripts/Audio Loader.gd" id="4_8a5sl"]
 [ext_resource type="Script" uid="uid://b5ldnmll25mi7" path="res://Modes/Arcade/Map Maker/Scripts/Open Load_menu.gd" id="4_arqoa"]
 [ext_resource type="Script" uid="uid://lw7rov3w5stc" path="res://Modes/Arcade/Map Maker/Scripts/Orb Creator.gd" id="5_7mntf"]
-[ext_resource type="Script" uid="uid://dygaq2ymouo5e" path="res://Global/Scripts/Back Button Only.gd" id="5_gnmvy"]
+[ext_resource type="Script" uid="uid://dygaq2ymouo5e" path="res://Global/Objects/Back Button/Scripts/Back Button.gd" id="5_gnmvy"]
 [ext_resource type="Script" uid="uid://cbviq8r5d0e2n" path="res://Modes/Arcade/Map Maker/Scripts/Marker Create.gd" id="5_hhcyl"]
 [ext_resource type="Script" uid="uid://bl7mpg4vneol5" path="res://Modes/Arcade/Map Maker/Scripts/Toggle Adder Menu.gd" id="7_kjevn"]
 [ext_resource type="Script" uid="uid://b6vflyjyyex6o" path="res://Modes/Arcade/Map Maker/Scripts/Exporter.gd" id="7_l68bq"]

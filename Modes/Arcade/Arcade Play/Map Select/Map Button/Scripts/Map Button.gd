@@ -1,33 +1,41 @@
-extends Button
+extends Control
 
 # Variables ----------------------------------------------------------------------------------------
 
-# Gameplay Scene
-var gameplaySceneString = "res://Screens/Play Mode/Map Player.tscn"
+@export var mapPlayer : PackedScene
+
+var mapName : String
 
 var hovered = false
 
+@onready var buttonChild : Node = $Button
+
 # Functions ----------------------------------------------------------------------------------------
 
-# Main Function
-func _on_pressed():
-	global.mapTitle = self.text
-	get_tree().change_scene_to_file(gameplaySceneString)
+func _ready() -> void:
+	buttonChild.text = mapName
 
-# Cursor Function
-func _physics_process(_delta):
+func _process(_delta) -> void:
 	if hovered:
-		self.disabled = true
+		buttonChild.disabled = true
 	else:
-		self.disabled = false
+		buttonChild.disabled = false
 	
 	if Input.is_action_just_pressed("Accept"):
-		_on_pressed()
+		if hovered:
+			_pressed()
 
-func _cursor_over(area: Area2D):
+func _cursor_over(area: Area2D) -> void:
 	if area.is_in_group("cursor"):
 		hovered = true
 
-func _cursor_off(area: Area2D):
+func _cursor_off(area: Area2D) -> void:
 	if area.is_in_group("cursor"):
 			hovered = false
+
+func _pressed() -> void:
+	global.mapTitle = mapName
+	if mapPlayer:
+		get_tree().change_scene_to_packed(mapPlayer)
+	else:
+		print("Oops, something went wrong!")

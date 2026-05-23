@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bi7a5yyuec8v"]
+
+[ext_resource type="Script" uid="uid://r0d663gxlj5u" path="res://Modes/Scripts/Score.gd" id="1_obj2j"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1649038765]
+
+[node name="Multiplier" type="Label" parent="." unique_id=617360635]
+offset_left = 16.0
+offset_top = 564.0
+offset_right = 56.0
+offset_bottom = 587.0
+text = "1x"
+script = ExtResource("1_obj2j")
+
+[node name="Score" type="Label" parent="." unique_id=317667133]
+offset_left = 42.0
+offset_top = 584.0
+offset_right = 82.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 39
+text = "0"

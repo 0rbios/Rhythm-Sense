@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://ci08v8yl1ry3f" path="res://Modes/Arcade/Arcade Play/Scripts/Map Loader.gd" id="1_w7fhx"]
 [ext_resource type="Script" uid="uid://ojq5roc5nd02" path="res://Modes/Arcade/Arcade Play/Scripts/Orb Creator.gd" id="2_dliau"]
 [ext_resource type="Script" uid="uid://bwul1b57nlmci" path="res://Modes/Arcade/Arcade Play/Scripts/BPM Timer.gd" id="3_qwvua"]
+[ext_resource type="PackedScene" uid="uid://d3giewil23og2" path="res://Menus/Main Menu/Main Menu.tscn" id="5_itr3n"]
 [ext_resource type="Script" uid="uid://bxnb3nbnkjxmi" path="res://Modes/Arcade/Arcade Play/Scripts/Map Finish.gd" id="5_ta1n7"]
-[ext_resource type="Script" uid="uid://r0d663gxlj5u" path="res://Global/Scripts/Score.gd" id="6_p1o1i"]
+[ext_resource type="PackedScene" uid="uid://bi7a5yyuec8v" path="res://Modes/Arcade/Arcade Play/HUD/HUD.tscn" id="6_5igha"]
+[ext_resource type="PackedScene" uid="uid://c4adhl481f02r" path="res://Global/Objects/Orb/Orb.tscn" id="7_nnxdd"]
 
 [node name="Map" type="Node2D" unique_id=726193201]
 script = ExtResource("1_w7fhx")
-
-[node name="Camera" type="Camera2D" parent="." unique_id=1233813076]
 
 [node name="Player" parent="." unique_id=628880273 instance=ExtResource("1_00lnd")]
 scale = Vector2(0.55, 0.55)
@@ -21,31 +21,19 @@ script = ExtResource("3_qwvua")
 
 [node name="Music Player" type="AudioStreamPlayer2D" parent="." unique_id=439531471]
 script = ExtResource("5_ta1n7")
+mainMenu = ExtResource("5_itr3n")
 
 [node name="Center" type="Marker2D" parent="." unique_id=501543445]
 
-[node name="Orb Creator" type="Node2D" parent="Center" unique_id=23881736 node_paths=PackedStringArray("orbs")]
+[node name="Orb Creator" type="Node2D" parent="Center" unique_id=23881736 node_paths=PackedStringArray("orbParent")]
 position = Vector2(324, 0)
 script = ExtResource("2_dliau")
-orbs = NodePath("../../Orbs")
+orb = ExtResource("7_nnxdd")
+orbParent = NodePath("../../Orbs")
 
 [node name="Orbs" type="Node2D" parent="." unique_id=1288028043]
 
-[node name="Multiplier" type="Label" parent="." unique_id=1348651393]
-offset_left = -566.0
-offset_top = 238.0
-offset_right = -526.0
-offset_bottom = 261.0
-text = "1x"
-script = ExtResource("6_p1o1i")
-
-[node name="Score" type="Label" parent="." unique_id=989641684]
-offset_left = -540.0
-offset_top = 258.0
-offset_right = -500.0
-offset_bottom = 312.0
-theme_override_font_sizes/font_size = 39
-text = "0"
+[node name="HUD" parent="." unique_id=1649038765 instance=ExtResource("6_5igha")]
 
 [connection signal="timeout" from="Spawn BPM Timer" to="Spawn BPM Timer" method="_on_timeout"]
 [connection signal="timeout" from="Spawn BPM Timer" to="Center/Orb Creator" method="_create_timer_out"]

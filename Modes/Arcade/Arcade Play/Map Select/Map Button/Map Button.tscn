@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpy2rqxgh1bbx"]
 
 [ext_resource type="Script" uid="uid://ef4mrwm1onua" path="res://Modes/Arcade/Arcade Play/Map Select/Map Button/Scripts/Map Button.gd" id="1_k5vb7"]
+[ext_resource type="PackedScene" uid="uid://ct30x4sxuk4h2" path="res://Modes/Arcade/Arcade Play/Map Player.tscn" id="2_bijgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhgjr"]
 size = Vector2(1137, 146)
@@ -12,6 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k5vb7")
+mapPlayer = ExtResource("2_bijgi")
 
 [node name="Button" type="Button" parent="." unique_id=2067202328]
 layout_mode = 0
@@ -20,7 +23,6 @@ offset_right = 1143.0
 offset_bottom = 146.0
 theme_override_font_sizes/font_size = 45
 text = "Test"
-script = ExtResource("1_k5vb7")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1639863482]
 
@@ -28,6 +30,6 @@ script = ExtResource("1_k5vb7")
 position = Vector2(574.5, 73)
 shape = SubResource("RectangleShape2D_mhgjr")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="area_entered" from="Hitbox" to="Button" method="_cursor_over"]
-[connection signal="area_exited" from="Hitbox" to="Button" method="_cursor_off"]
+[connection signal="pressed" from="Button" to="." method="_pressed"]
+[connection signal="area_entered" from="Hitbox" to="." method="_cursor_over"]
+[connection signal="area_exited" from="Hitbox" to="." method="_cursor_off"]

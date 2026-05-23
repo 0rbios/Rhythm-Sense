@@ -10,6 +10,7 @@ radius = 0.5
 [node name="Cursor" type="MeshInstance2D" unique_id=1103410415]
 modulate = Color(0, 0, 0, 0.5019608)
 self_modulate = Color(0, 0, 0, 0.5019608)
+top_level = true
 scale = Vector2(60, 60)
 mesh = SubResource("SphereMesh_waijc")
 script = ExtResource("1_xq7o7")

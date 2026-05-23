@@ -3,8 +3,7 @@ extends Node
 # Variables ----------------------------------------------------------------------------------------
 
 var config = ConfigFile.new()
-var userPath = OS.get_data_dir()
-var settingsFilePath = userPath + "/SpinR/settings.ini"
+var settingsFilePath = OS.get_data_dir() + "/Rhythm Sense/settings.ini"
 
 # Functions
 
